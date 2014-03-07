@@ -45,12 +45,6 @@ function refresh($state, breadcrumbs) {
     return breadcrumbs;
   }
 
-  // Public Interface
-
-  this.compileWith = function(customCompiler) {
-    return compile = customCompiler || defaultCompiler;
-  };
-
   this.$get = [
     '$rootScope',
     '$state',
