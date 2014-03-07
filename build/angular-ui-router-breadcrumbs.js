@@ -36,11 +36,14 @@ return {
 // Source: src/services/breadcrumbs.js
 breadcrumbs.provider('breadcrumbs', function BreadcrumbsProvider() {
 function refresh($state, breadcrumbs) {
-    var currentState = $state.$current;
+    var currentState = $state.$current,
+        len = currentState.breadcrumb.length;
 
     breadcrumbs.length = 0;
 
-    breadcrumbs = currentState.breadcrumb;
+    for (var i = 0; i < len; i++) {
+      breadcrumbs.push(currentState.breadcrumb[i]);
+    }
 
     return breadcrumbs;
   }
@@ -50,9 +53,9 @@ function refresh($state, breadcrumbs) {
     '$state',
     function($rootScope, $state) {
       var breadcrumbs = [];
-      breadcrumbs = refresh($state, breadcrumbs);
+      refresh($state, breadcrumbs);
       $rootScope.$on('$stateChangeSuccess', function() {
-        breadcrumbs = refresh($state, breadcrumbs);
+        refresh($state, breadcrumbs);
       });
       return breadcrumbs;
     }
