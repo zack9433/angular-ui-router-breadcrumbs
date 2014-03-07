@@ -18,7 +18,7 @@ bower install https://github.com/interval-braining/angular-ui-router-breadcrumbs
 
 **(2)** Include JS file.
 ```javascript
-<script src="bower_components/angular-ui-router-breadcrumbs/build/angular-ui-router-breadcrumbs.js"></script>
+<script src="bower_components/angular-ui-router-breadcrumbs/build/angular-ui-router-breadcrumbs.js"><\/script>
 ```
 
 **(3)** Add `'ui.router.breadcrumbs'` to your main module's list of dependencies.
