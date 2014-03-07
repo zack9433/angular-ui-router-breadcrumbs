@@ -1,7 +1,7 @@
 {
   "name": "angular-ui-router-breadcrumbs",
   "version": "0.0.1",
-  "main": "./release/angular-ui-router-breadcrumbs.js",
+  "main": "./build/angular-ui-router-breadcrumbs.js",
   "dependencies": {
     "angular": ">= 1.0.8",
     "angular-ui-router": "master"
