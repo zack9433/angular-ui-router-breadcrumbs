@@ -11,12 +11,6 @@ breadcrumbs.provider('breadcrumbs', function BreadcrumbsProvider() {
     return breadcrumbs;
   }
 
-  // Public Interface
-
-  this.compileWith = function(customCompiler) {
-    return compile = customCompiler || defaultCompiler;
-  };
-
   this.$get = [
     '$rootScope',
     '$state',
@@ -26,6 +20,7 @@ breadcrumbs.provider('breadcrumbs', function BreadcrumbsProvider() {
       $rootScope.$on('$stateChangeSuccess', function() {
         breadcrumbs = refresh($state, breadcrumbs);
       });
+      return breadcrumbs;
     }
   ];
 });
