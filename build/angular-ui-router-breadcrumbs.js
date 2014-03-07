@@ -54,6 +54,7 @@ function refresh($state, breadcrumbs) {
       $rootScope.$on('$stateChangeSuccess', function() {
         breadcrumbs = refresh($state, breadcrumbs);
       });
+      return breadcrumbs;
     }
   ];
 });
